@@ -1,1 +1,1 @@
-from .imdb_api import Imdb
+from .imdb_api import IMDB
