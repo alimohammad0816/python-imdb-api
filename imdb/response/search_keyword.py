@@ -4,7 +4,7 @@ from typing import List
 
 class SearchKeyword(Base):
     @property
-    def results(self) -> List[SearchKeywordCore]:
+    def items(self) -> List[SearchKeywordCore]:
         items = self.response.get("results")
 
         if items:

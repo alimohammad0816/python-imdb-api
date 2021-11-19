@@ -88,7 +88,7 @@ class IMDB:
         """
         return MostPopularTVs(self.url_get(ApiCall.MostPopularTVs))
 
-    def comming_soon(self):
+    def comming_soon(self) -> ComingSoon:
         """
             Get Coming Soon Movies.
 
@@ -130,7 +130,7 @@ class IMDB:
         """
         return BoxOfficeAll(self.url_get(ApiCall.BoxOfficeAllTime))
 
-    def keyword(self, keyword: str):
+    def keyword(self, keyword: str) -> Keyword:
         """
             A valid IMDb Keyword (already founded in SearchKeyword action)
 
@@ -144,7 +144,7 @@ class IMDB:
         """
         return Keyword(self.url_get(ApiCall.Keyword, keyword))
 
-    def search_movie(self, expression: str):
+    def search_movie(self, expression: str) -> SearchMovies:
         """
             Search into all Movies.
 
@@ -192,7 +192,7 @@ class IMDB:
         """
         return Title(self.url_get(ApiCall.Title, imdb_id, options))
 
-    def search_keword(self, keyword: str):
+    def search_keword(self, keyword: str) -> SearchKeyword:
         """
         Search into all keywords.
         
@@ -206,89 +206,3 @@ class IMDB:
         SearchKeyword
         """
         return SearchKeyword(self.url_get(ApiCall.SearchKeyword, keyword))
-
-    def in_theaters(self):
-        """
-            Get In Theaters Movies.
-
-            Parameters
-            ----------
-            None
-
-            Returns
-            -------
-            None
-        """
-        pass
-    
-    def name(self, imdb_id: str):
-        """
-            Get information of people (actor, actress, director, writers, ...).
-
-            Parameters
-            ----------
-            imdb_id: str
-                A valid IMDb Name Id. Id startd withs nm.
-
-            Returns
-            -------
-                None
-        """
-        pass
-    
-    def company(self, company_id: str):
-        """
-            Get information of company with movies.
-            
-            Parameters
-            ----------
-            company_id: str
-                A valid IMDb Company Id. Id started withs co.
-
-            Returns
-            -------
-                None
-        """
-        pass
-    
-    def youtube_trailer(self, imdb_id: str):
-        """
-            Get YouTube Trailer URL by IMDb Id.
-
-            Parameters
-            ----------
-            imdb_id: str
-                A valid IMDb Id. Id started withs tt.
-
-            Returns:
-                None
-        """
-        pass
-    
-    def youtube(self, valid_youtube: str):
-        """
-            YouTube Downloader by Video Id or URL.
-
-            Parameters
-            ----------
-            valid_youtube: str
-                A valid YouTube Video Id or YouTube URL
-
-            Returns:
-                None
-        """
-        pass
-    
-    def youtube_playlist(self, playlist: str):
-        """
-            YouTube Downloader by Playlist Id or URL.
-            
-            Parameters
-            ----------
-            playlist: str
-                A valid YouTube Playlist Id or YouTube Playlist URL
-
-            Returns:
-                None
-        """
-        pass

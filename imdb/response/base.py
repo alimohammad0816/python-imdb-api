@@ -1,13 +1,18 @@
 from ..exception import (
     ErrorMessage, InvalidApiKey
 )
+from abc import ABC, abstractclassmethod
 
 
-class Base:
+class Base(ABC):
     def __init__(self, response: dict) -> None:
         self.response = response
         if self.error_message == ErrorMessage.invalid_api_key:
             raise InvalidApiKey
+
+    @abstractclassmethod
+    def items(self):
+        raise NotImplementedError
 
     @property
     def error_message(self):

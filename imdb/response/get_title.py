@@ -4,7 +4,7 @@ from ..exception import NotFound
 
 class Title(Base):
     @property
-    def data(self) -> TitleCore:
+    def items(self) -> TitleCore:
         items = self.response
         if items:
             return TitleCore(self.response)
