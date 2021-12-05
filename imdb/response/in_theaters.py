@@ -1,15 +1,15 @@
 from .base import Base
-from ..core import BoxOfficeAllCore
+from ..core import InTheatersCore
 from typing import List
 
 
-class BoxOfficeAll(Base):
+class InTheaters(Base):
     @property
-    def items(self) -> List[BoxOfficeAllCore]:
+    def items(self) -> List[InTheatersCore]:
         items = self.response.get("items")
 
         if items:
-            return [BoxOfficeAllCore(i) for i in items]
+            return [InTheatersCore(i) for i in items]
         
         else:
             return None

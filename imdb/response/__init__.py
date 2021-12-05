@@ -10,3 +10,4 @@ from .box_office_all import BoxOfficeAll
 from .coming_soon import ComingSoon
 from .search_keyword import SearchKeyword
 from .keyword import Keyword
+from .in_theaters import InTheaters

@@ -7,6 +7,7 @@ from .response import (
     Title, BoxOffices,
     BoxOfficeAll, ComingSoon,
     SearchKeyword, Keyword,
+    InTheaters,
 )
 from .core import ApiCall
 
@@ -20,12 +21,13 @@ class IMDB:
         api_key: str
             IMDB API KEY
     """
-    def __init__(self, api_key: str) -> None:
+    def __init__(self, api_key: str, lang="en") -> None:
         self.base_url = "https://imdb-api.com"
         self.api_key = api_key
+        self.lang = lang
 
-    def url_get(self, call: str, *args, lang="en"):
-        url = f"{self.base_url}/{lang}/API/{call}/{self.api_key}"
+    def url_get(self, call: str, *args):
+        url = f"{self.base_url}/{self.lang}/API/{call}/{self.api_key}"
 
         for arg in args:
             url += f"/{arg}"
@@ -87,6 +89,20 @@ class IMDB:
             MostPopularTVs
         """
         return MostPopularTVs(self.url_get(ApiCall.MostPopularTVs))
+
+    def in_theaters(self) -> InTheaters:
+        """
+        Get In Theaters Movies.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        InTheaters
+        """
+        return InTheaters(self.url_get(ApiCall.InTheaters))
 
     def comming_soon(self) -> ComingSoon:
         """
