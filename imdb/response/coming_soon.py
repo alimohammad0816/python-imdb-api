@@ -11,6 +11,6 @@ class ComingSoon(Base):
 
         if items:
             return [ComingSoonCore(i) for i in items]
-        
+
         else:
             return None

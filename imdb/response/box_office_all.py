@@ -10,6 +10,6 @@ class BoxOfficeAll(Base):
 
         if items:
             return [BoxOfficeAllCore(i) for i in items]
-        
+
         else:
             return None

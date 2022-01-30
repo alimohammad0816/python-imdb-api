@@ -7,7 +7,7 @@ from .response import (
     Title, BoxOffices,
     BoxOfficeAll, ComingSoon,
     SearchKeyword, Keyword,
-    InTheaters,
+    InTheaters, Name,
 )
 from .core import ApiCall
 
@@ -37,7 +37,7 @@ class IMDB:
     def top250_movies(self) -> Top250Movies:
         """
             Get Top 250 Movies.
-            
+
             Parameters
             ----------
             None
@@ -65,7 +65,7 @@ class IMDB:
     def most_popular_movies(self) -> MostPopularMovies:
         """
             Get Top 100 Most Polular Movies.
-            
+
             Parameters
             ----------
             None
@@ -79,7 +79,7 @@ class IMDB:
     def most_popular_tvs(self) -> MostPopularTVs:
         """
             Get Top 100 Most Polular Series TVs.
-            
+
             Parameters
             ----------
             None
@@ -146,6 +146,20 @@ class IMDB:
         """
         return BoxOfficeAll(self.url_get(ApiCall.BoxOfficeAllTime))
 
+    def name(self, person_id: str):
+        """
+            Get information of people (actor, actress, director, writers, ...).
+
+            Parameters
+            ----------
+            person_id: str
+                A valid IMDb Name Id. Id startd withs nm.
+
+            Returns:
+                Name
+        """
+        return Name(self.url_get(ApiCall.Name, person_id))
+
     def keyword(self, keyword: str) -> Keyword:
         """
             A valid IMDb Keyword (already founded in SearchKeyword action)
@@ -190,18 +204,18 @@ class IMDB:
         """
         return SearchSeries(self.url_get(ApiCall.SearchSeries, expression))
 
-    def title(self, imdb_id: str, options: str="") -> Title:
+    def title(self, imdb_id: str, options: str = "") -> Title:
         """
             Get Movies or Series TV information.
-            
+
             Parameters
             ----------
             imdb_id : str
                 A valid IMDb Id. Id started withs tt.
-            
+
             options : str
                 Options to get more information about: FullActor, FullCast, Posters, Images, Trailer, Ratings, Wikipedia.
-            
+
             Returns
             -------
             Title
@@ -211,7 +225,7 @@ class IMDB:
     def search_keword(self, keyword: str) -> SearchKeyword:
         """
         Search into all keywords.
-        
+
         Parameters
         ----------
         keyword : str

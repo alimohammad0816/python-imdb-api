@@ -10,6 +10,6 @@ class Keyword(Base):
 
         if items:
             return [KeywordCore(i) for i in items]
-        
+
         else:
             return None

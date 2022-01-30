@@ -21,7 +21,7 @@ class Base(ABC):
     @property
     def search_type(self):
         return self.response.get("searchType")
-    
+
     @property
     def expression(self):
         return self.response.get("expression")

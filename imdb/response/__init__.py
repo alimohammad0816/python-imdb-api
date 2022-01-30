@@ -11,3 +11,4 @@ from .coming_soon import ComingSoon
 from .search_keyword import SearchKeyword
 from .keyword import Keyword
 from .in_theaters import InTheaters
+from .name import Name

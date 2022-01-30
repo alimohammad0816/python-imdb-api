@@ -10,6 +10,6 @@ class InTheaters(Base):
 
         if items:
             return [InTheatersCore(i) for i in items]
-        
+
         else:
             return None
