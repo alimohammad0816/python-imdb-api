@@ -9,6 +9,7 @@ from .response import (
     SearchKeyword, Keyword,
     InTheaters, Name,
     Company, YouTubeTrailer,
+    YouTube,
 )
 from .core import ApiCall
 
@@ -204,6 +205,21 @@ class IMDB:
             YoutubeTrailer
         """
         return YouTubeTrailer(self.url_get(ApiCall.YouTubeTrailer, imdb_id))
+
+    def youtube(self, video_id: str):
+        """
+            YouTube Downloader by Video Id or URL.
+
+            Parameters
+            ----------
+            video_id: str
+                A valid YouTube Video Id or YouTube URL
+
+            Returns
+            -------
+            YouTube
+        """
+        return YouTube(self.url_get(ApiCall.YouTube, video_id))
 
     def search_movie(self, expression: str) -> SearchMovies:
         """
