@@ -12,3 +12,4 @@ from .in_theaters import InTheatersCore
 from .company import CompanyCore
 from .youtube_trailer import YouTubeTrailerCore
 from .youtube import YouTubeCore
+from .youtube_playlist import YouTubePlaylistCore

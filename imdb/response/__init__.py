@@ -15,3 +15,4 @@ from .name import Name
 from .company import Company
 from .youtube_trailer import YouTubeTrailer
 from .youtube import YouTube
+from .youtube_playlist import YouTubePlaylist
