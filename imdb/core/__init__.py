@@ -9,3 +9,4 @@ from .coming_soon import ComingSoonCore
 from .search_keyword import SearchKeywordCore
 from .keyword import KeywordCore
 from .in_theaters import InTheatersCore
+from .company import CompanyCore

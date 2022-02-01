@@ -8,6 +8,7 @@ from .response import (
     BoxOfficeAll, ComingSoon,
     SearchKeyword, Keyword,
     InTheaters, Name,
+    Company,
 )
 from .core import ApiCall
 
@@ -160,6 +161,21 @@ class IMDB:
         """
         return Name(self.url_get(ApiCall.Name, person_id))
 
+    def company(self, compary_id: str):
+        """
+            Get information of company with movies.
+
+            Parameters
+            ----------
+            compary_id: str
+                A valid IMDb Company Id. Id started withs co.
+
+            Returns
+            -------
+            Company
+        """
+        return Company(self.url_get(ApiCall.Company, compary_id))
+
     def keyword(self, keyword: str) -> Keyword:
         """
             A valid IMDb Keyword (already founded in SearchKeyword action)
@@ -181,7 +197,8 @@ class IMDB:
             Parameters
             ----------
             expression: str
-                Expression for search. For examples "Leon The Professional" or "Inception". You can also SearchMovie with year (ex: "Inception 2010")
+                Expression for search. For examples "Leon The Professional" or "Inception".
+                You can also SearchMovie with year (ex: "Inception 2010")
 
             Returns
             -------
@@ -196,7 +213,8 @@ class IMDB:
             Parameters
             ----------
             expression: str
-                Expression for search. For examples "Leon The Professional" or "Inception". You can also SearchMovie with year (ex: "Inception 2010")
+                Expression for search. For examples "Leon The Professional" or "Inception".
+                You can also SearchMovie with year (ex: "Inception 2010")
 
             Returns
             -------
@@ -214,7 +232,8 @@ class IMDB:
                 A valid IMDb Id. Id started withs tt.
 
             options : str
-                Options to get more information about: FullActor, FullCast, Posters, Images, Trailer, Ratings, Wikipedia.
+                Options to get more information about:
+                    FullActor, FullCast, Posters, Images, Trailer, Ratings, Wikipedia.
 
             Returns
             -------
