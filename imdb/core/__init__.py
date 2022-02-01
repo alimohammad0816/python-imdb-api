@@ -10,3 +10,4 @@ from .search_keyword import SearchKeywordCore
 from .keyword import KeywordCore
 from .in_theaters import InTheatersCore
 from .company import CompanyCore
+from .youtube_trailer import YouTubeTrailerCore

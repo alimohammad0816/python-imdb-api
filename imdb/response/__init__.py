@@ -13,3 +13,4 @@ from .keyword import Keyword
 from .in_theaters import InTheaters
 from .name import Name
 from .company import Company
+from .youtube_trailer import YouTubeTrailer
