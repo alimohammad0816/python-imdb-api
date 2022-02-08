@@ -1,9 +1,9 @@
 class KeywordCore:
-    def __init__(self, items: dict) -> None:
-        self.items = items
-        self.id = items.get("id")
-        self.title = items.get("title")
-        self.year = items.get("year")
-        self.image = items.get("image")
-        self.imdb_rating = items.get("imDbRating")
+    def __init__(self, response: dict) -> None:
+        self.response = response
+        self.id = response.get("id")
+        self.title = response.get("title")
+        self.year = response.get("year")
+        self.image = response.get("image")
+        self.imdb_rating = response.get("imDbRating")
 

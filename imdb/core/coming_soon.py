@@ -1,40 +1,43 @@
+class GenreCore:
+    def __init__(self, response: dict):
+        self.response = response
+        self.key = response.get("key")
+        self.value = response.get("value")
+
+
+class DirectoreCore:
+    def __init__(self, response: dict):
+        self.response = response
+        self.id = response.get("id")
+        self.name = response.get("name")
+
+
+class StarCore:
+    def __init__(self, response: dict):
+        self.response = response
+        self.id = response.get("id")
+        self.name = response.get("name")
+
+
 class ComingSoonCore:
-    def __init__(self, items) -> None:
-        self.items = items
-        self.id = items.get("id")
-        self.title = items.get("title")
-        self.full_title = items.get("fullTitle")
-        self.year = items.get("year")
-        self.release_state = items.get("releaseState")
-        self.image = items.get("image")
-        self.runtime_mins = items.get("runtimeMins")
-        self.runtime_str = items.get("runtimeStr")
-        self.plot = items.get("plot")
-        self.content_rating = items.get("contentRating")
-        self.imdb_rating = items.get("imDbRating")
-        self.imdb_rating_count = items.get("imDbRatingCount")
-        self.metacritic_rating = items.get("metacriticRating")
-        self.genres = items.get("genres")
-        self.genre_list = items.get("genreList")
-        #   [
-        #     {
-        #       "key": "string",
-        #       "value": "string"
-        #     }
-        #   ]
-        self.directors = items.get("directors")
-        self.director_list = items.get("directorList")
-        #   [
-        #     {
-        #       "id": "string",
-        #       "name": "string"
-        #     }
-        #   ]
-        self.start = items.get("stars")
-        self.start_list = items.get("starList")
-        #   [
-        #     {
-        #       "id": "string",
-        #       "name": "string"
-        #     }
-        #   ]
+    def __init__(self, response) -> None:
+        self.response = response
+        self.id = response.get("id")
+        self.title = response.get("title")
+        self.full_title = response.get("fullTitle")
+        self.year = response.get("year")
+        self.release_state = response.get("releaseState")
+        self.image = response.get("image")
+        self.runtime_mins = response.get("runtimeMins")
+        self.runtime_str = response.get("runtimeStr")
+        self.plot = response.get("plot")
+        self.content_rating = response.get("contentRating")
+        self.imdb_rating = response.get("imDbRating")
+        self.imdb_rating_count = response.get("imDbRatingCount")
+        self.metacritic_rating = response.get("metacriticRating")
+        self.genres = response.get("genres")
+        self.genre_list = [GenreCore(g) for g in response.get("genreList")]
+        self.directors = response.get("directors")
+        self.director_list = [DirectoreCore(d) for d in response.get("directorList")]
+        self.stars = response.get("stars")
+        self.star_list = [StarCore(s) for s in response.get("starList")]

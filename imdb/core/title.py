@@ -1,6 +1,6 @@
 class TitleCore:
     def __init__(self, response: dict) -> None:
-        self.items = response
+        self.response = response
         self.id = response.get("id")
         self.title = response.get("title")
         self.original_title = response.get("originalTitle")

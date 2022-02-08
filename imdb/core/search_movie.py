@@ -1,8 +1,8 @@
 class SearchMovieCore:
-    def __init__(self, items: dict) -> None:
-        self.items = items
-        self.id = items.get("id")
-        self.result_type = items.get("resultType")
-        self.image = items.get("image")
-        self.title = items.get("title")
-        self.description = items.get("description")
+    def __init__(self, response: dict) -> None:
+        self.response = response
+        self.id = response.get("id")
+        self.result_type = response.get("resultType")
+        self.image = response.get("image")
+        self.title = response.get("title")
+        self.description = response.get("description")

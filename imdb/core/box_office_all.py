@@ -1,12 +1,12 @@
 class BoxOfficeAllCore:
-    def __init__(self, items) -> None:
-        self.items = items
-        self.id = items.get("id")
-        self.rank = items.get("rank")
-        self.title = items.get("title")
-        self.world_wide_life_time_gross = items.get("worldwideLifetimeGross")
-        self.domestic_life_time_gross = items.get("domesticLifetimeGross")
-        self.domestic = items.get("domestic")
-        self.foreign_life_time_gross = items.get("foreignLifetimeGross")
-        self.foreign = items.get("foreign")
-        self.year = items.get("year")
+    def __init__(self, response) -> None:
+        self.response = response
+        self.id = response.get("id")
+        self.rank = response.get("rank")
+        self.title = response.get("title")
+        self.world_wide_life_time_gross = response.get("worldwideLifetimeGross")
+        self.domestic_life_time_gross = response.get("domesticLifetimeGross")
+        self.domestic = response.get("domestic")
+        self.foreign_life_time_gross = response.get("foreignLifetimeGross")
+        self.foreign = response.get("foreign")
+        self.year = response.get("year")
